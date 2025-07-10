@@ -1,8 +1,6 @@
 
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
-import torch
 from sklearn.metrics import precision_recall_fscore_support
-
+from sglang import program, user, assistant, system, gen
 import os
 
 # Set your API key
@@ -14,6 +12,7 @@ model = AutoModelForCausalLM.from_pretrained(model_name)
 
 device = 0 if torch.cuda.is_available() else -1
 pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, device=device)
+
 
 # Create pipeline
 def make_prompt(record_a: str, record_b: str) -> str:
