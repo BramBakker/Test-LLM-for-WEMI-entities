@@ -21,41 +21,41 @@ long_prompt = """
     reactie: Ja
 
     voorbeeld 2:
-
-    record A: COL taal VAL ned COL titel VAL De @atoomtrillingen COL hoofdauteur VAL Toonder, Marten Toonder 1912-2005
-    record B: COL taal VAL ned COL titel VAL De @toornviolen COL hoofdauteur VAL Toonder, Marten Toonder 1912-2005 COL Eerder verschenen in VAL Een heer moet alles alleen doen. - Amsterdam : De Bezige Bij, 1969. - (Literaire reuzenpocket ; 310) COL auteur/primair VAL Toonder
-    
-    Behoren deze boeken tot hetzelfde werk? Antwoord Ja of Nee: 
-    reactie: Nee
-
-    voorbeeld 3:
-    record A: COL taal VAL ned COL titel VAL @Eustachius COL hoofdauteur VAL Schmid, Johann Christoph Friedrich von Schmid 1768-1854
-    record B: COL taal VAL fra COL titel VAL @Eustache COL ondertitel VAL épisode des premiers temps du christianisme COL hoofdauteur VAL Schmid, Johann Christoph Friedrich von Schmid 1768-1854 COL 2e auteur VAL Friedel
+    record A: COL taal VAL ned COL jaar VAL 1920 COL titel VAL @Eustachius COL hoofdauteur VAL Schmid, Johann Christoph Friedrich von Schmid 1768-1854 COL editie VAL 2e dr COL plaats VAL Sneek COL uitgever VAL Boeijenga COL omschrijving VAL (In vereenvoudigde spelling) COL omschrijving VAL Ondertitel op omslag: De veldheer der Romeinen : een verhaal uit de eerste Christentijden
+    record B: COL taal VAL fra COL jaar VAL 1843 COL titel VAL @Eustache COL ondertitel VAL épisode des premiers temps du christianisme COL hoofdauteur VAL Schmid, Johann Christoph Friedrich von Schmid 1768-1854 COL 2e auteur VAL Friedel COL plaats VAL Tours COL uitgever VAL Mame
 
     Behoren deze boeken tot hetzelfde werk? Antwoord Ja of Nee: 
     reactie: Ja
 
-    voorbeeld 4:
-    record A: COL taal VAL ned COL titel VAL De @Saint aan het stuur COL hoofdauteur VAL Charteris, Leslie Charteris 1907-1993 COL 2e auteur VAL Beks, Martinus Arnoldus Maria Beks 1929-2001 COL vertaling van VAL le saint au volant. - Paris : Fayard, 1961
-    record B: COL taal VAL ned COL titel VAL De @Saint en de tijger COL hoofdauteur VAL Charteris, Leslie Charteris 1907-1993 COL 2e auteur VAL Havank, Havank COL vertaling van VAL Meet the tiger. - ©1935
+    voorbeeld 3:
+    record A: COL taal VAL ned COL jaar VAL 1963 COL titel VAL De @Saint aan het stuur COL hoofdauteur VAL Charteris, Leslie Charteris 1907-1993 COL 2e auteur VAL Beks, Martinus Arnoldus Maria Beks 1929-2001 COL plaats VAL Utrecht COL uitgever VAL Bruna COL vertaling van VAL le saint au volant. - Paris : Fayard, 1961
+    record B: COL ISBN VAL 9022902196 COL taal VAL ned COL jaar VAL 1980 COL titel VAL De @Saint en de tijger COL hoofdauteur VAL Charteris, Leslie Charteris 1907-1993 COL 2e auteur VAL Havank, Havank COL plaats VAL Utrecht COL uitgever VAL A.W. Bruna & Zoon COL vertaling van VAL Meet the tiger. - ©1935
 
     Behoren deze boeken tot hetzelfde werk? Antwoord Ja of Nee: 
     reactie: Nee
 
-    voorbeeld 5:
+    voorbeeld 4:
     record A: COL taal VAL ned COL titel VAL @Jungleboek COL hoofdauteur VAL Disney, Walter Elias Disney 1901-1966 COL 2e auteur VAL Kipling, Joseph Rudyard Kipling 1865-1936 COL 2e auteur VAL Marel, Joop v.d. Marel COL 2e auteur VAL Ekel, Pieter Ekel 1921-2012
     record B: COL taal VAL ned COL titel VAL Het @jungle-boek COL hoofdauteur VAL Disney, Walter Elias Disney 1901-1966 COL 2e auteur VAL Kipling, Joseph Rudyard Kipling 1865-1936Havank COL vertaling van VAL Meet the tiger. - ©1935
 
     Behoren deze boeken tot hetzelfde werk? Antwoord Ja of Nee: 
     reactie: Ja
 
-    voorbeeld 6:
-    record A: COL taal VAL ned COL titel VAL @Gelukkige Hans COL hoofdauteur VAL Grimm, Jacob Ludwig Carl Grimm 1785-1863
-    record B: COL taal VAL ned COL titel VAL @Gelukkig Hansje COL ondertitel VAL eene vertelling voor kinderen COL hoofdauteur VAL Grimm, Jacob Ludwig Carl Grimm 1785-1863 COL 2e auteur VAL Schrijver der Historie van het huis van Adriaan, De Schrijver der Historie van het huis van Adriaan
+    voorbeeld 5:
+    record A: COL taal VAL ned COL jaar VAL 2013 COL titel VAL De @vreugde van het leven COL extra annotatie VAL vertaling [uit het Engels]: Annet Mons COL hoofdauteur VAL Cookson, Catherine Anne Cookson 1906-1998 COL 2e auteur VAL Mons, Annet Mons COL plaats VAL Amsterdam COL uitgever VAL Boekerij COL vertaling van VAL My beloved son. - London : Bantam Press, 1991
+    record B: COL taal VAL ned COL jaar VAL 2013 COL titel VAL De @drempel van het leven COL extra annotatie VAL vertaling [uit het Engels]: Annet Mons COL hoofdauteur VAL Cookson, Catherine Anne Cookson 1906-1998 COL 2e auteur VAL Mons, Annet Mons COL plaats VAL Amsterdam COL uitgever VAL Boekerij COL vertaling van VAL The rag nymph. - New York : Bantam, ©1991
     
     Behoren deze boeken tot hetzelfde werk? Antwoord Ja of Nee: 
-    reactie: Ja 
+    reactie: Nee
 
+    voorbeeld 6:
+
+    record A: COL taal VAL ned COL titel VAL De @atoomtrillingen COL hoofdauteur VAL Toonder, Marten Toonder 1912-2005
+    record B: COL taal VAL ned COL titel VAL De @toornviolen COL hoofdauteur VAL Toonder, Marten Toonder 1912-2005 COL Eerder verschenen in VAL Een heer moet alles alleen doen. - Amsterdam : De Bezige Bij, 1969. - (Literaire reuzenpocket ; 310) COL auteur/primair VAL Toonder
+    
+    Behoren deze boeken tot hetzelfde werk? Antwoord Ja of Nee: 
+    reactie: Nee
+    
     nu jij:
 """
 short_prompt = """

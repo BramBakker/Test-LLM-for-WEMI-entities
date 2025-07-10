@@ -8,10 +8,10 @@ fields_to_remove_work = {"taal", "ISBN", "omschrijving","annotatie","lokale anno
 def clean_segment(segment):
     """Remove unwanted fields from a COL...VAL segment."""
     matches = re.findall(r'COL (.*?) VAL (.*?)(?=(?:COL |$))', segment)
-    cleaned = [f"COL {k} VAL {v.strip()}" for k, v in matches if k.strip() not in fields_to_remove_work]
+    cleaned = [f"COL {k} VAL {v.strip()}" for k, v in matches if k.strip() not in fields_to_remove]
     return ' '.join(cleaned)
 
-with open('test_pairs_work.txt', 'r', encoding='utf-8') as infile, open('short_pairs_work_extra.txt', 'w', encoding='utf-8') as outfile:
+with open('test_pairs_expr.txt', 'r', encoding='utf-8') as infile, open('short_pairs_expr.txt', 'w', encoding='utf-8') as outfile:
     for line in infile:
         parts = line.strip().split('\t')
 

@@ -59,6 +59,7 @@ long_prompt = """
     
     Behoren deze records tot dezelfde expressie? Antwoord Ja of Nee: 
     reactie: Ja
+    
     nu jij:
 
 """
@@ -67,7 +68,6 @@ short_prompt = """
     Bepaal of twee boekenrecords tot hetzelfde expressie behoren.
     Dit betekent: Hebben de boeken geen significante tekstuele veranderingen (wel zelfde expressie), of zijn het vertalingen en herziene edities (niet zelfde expressie)?
     Alleen ander voorwoord, andere uitgever of andere illustrator/coverart is dezelfde expressie
-
 """
 correct_match=0
 with open("test_pairs_expr.txt", "r", encoding="utf-8") as f:
