@@ -2,7 +2,7 @@ import re
 
 # Fields you want to remove
 fields_to_remove = {"ISBN", "omschrijving","annotatie","lokale annotatie","plaats","jaar"}  # Add more as needed
-fields_to_remove_work = {"taal", "ISBN", "omschrijving","annotatie","lokale annotatie","uitgever","plaats","oorspronkelijk jaar","jaar","extra annotatie"}  # Add more as needed
+fields_to_remove_work = {"taal", "ISBN", "omschrijving","annotatie","lokale annotatie","uitgever","plaats","oorspronkelijk jaar","jaar","2e auteur annotatie"}  # Add more as needed
 
 
 def clean_segment(segment):
