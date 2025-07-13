@@ -10,9 +10,9 @@ pattern = r'COL (.*?) VAL (.*?)(?= COL |$)'
 preds = []
 labels = []
 total_correct = 0
-with open("test_pairs_work.txt", "r", encoding="utf-8") as f:
+with open("neg_work_simple.txt", "r", encoding="utf-8") as f:
     file = f.readlines()
-def is_match(val1, val2, threshold=3):
+def is_match(val1, val2, threshold=1.5):
     return Levenshtein.distance(val1.lower(), val2.lower()) <= threshold
 pos = 0
 neg = 0
@@ -38,21 +38,22 @@ for line in file:
     for key in shared_keys:
         if is_match(mdict1[key], mdict2[key]):
             if key=='hoofdauteur':
-                if 'vertaling' in s1 or 'vertaling' in s2:
-                    match_score+=5
-                
+                if 'vertaling' in s1:
+                    title=mdict2['titel']
+                    if title in mdict1['vertaling van']:
+                        match_score+=3                    
+                if 'vertaling' in s2:
+                    title=mdict1['titel']
+                    if title in mdict2['vertaling van']:
+                        match_score+=3
+                                    
             if key in imp_labels:
                 if label=='0':
                     imp_dict[key]+=1
                 if key=='taal':
-                    match_score += 3
+                    match_score += 2
 
                 match_score += 1
-        #if not is_match(mdict1[key], mdict2[key]):
-            #if 'jaar' in key:
-                #match_score-=1
-
-    #if herz.
     if match_score >= 6:
         pred=0
     else:

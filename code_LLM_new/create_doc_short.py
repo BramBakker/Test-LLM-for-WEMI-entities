@@ -2,13 +2,13 @@ import re
 
 # Fields you want to remove
 fields_to_remove = {"ISBN", "omschrijving","annotatie","lokale annotatie","plaats","jaar"}  # Add more as needed
-fields_to_remove_work = {"taal", "ISBN", "omschrijving","annotatie","lokale annotatie","uitgever","plaats","oorspronkelijk jaar","jaar","2e auteur annotatie"}  # Add more as needed
+fields_to_remove_work = {"taal", "ISBN", "omschrijving","annotatie","lokale annotatie","uitgever","plaats","oorspronkelijk jaar","jaar","2e auteur vermelding","hoofdauteur vermelding"}  # Add more as needed
 
 
 def clean_segment(segment):
     """Remove unwanted fields from a COL...VAL segment."""
     matches = re.findall(r'COL (.*?) VAL (.*?)(?=(?:COL |$))', segment)
-    cleaned = [f"COL {k} VAL {v.strip()}" for k, v in matches if k.strip() not in fields_to_remove]
+    cleaned = [f"COL {k} VAL {v.strip()}" for k, v in matches if k.strip() not in fields_to_remove_work]
     return ' '.join(cleaned)
 
 with open('test_pairs_expr.txt', 'r', encoding='utf-8') as infile, open('short_pairs_expr.txt', 'w', encoding='utf-8') as outfile:
