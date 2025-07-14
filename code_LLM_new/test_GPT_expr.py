@@ -83,6 +83,12 @@ for line in file:
         pr='0'
     else:
         pr='1'
+    if pr!=label:
+        print(pr)
+        print(label)
+        print(s1)
+        print(s2)
+        print(label)
     pred.append(pr)
     correct_labels.append(label)
 

@@ -56,7 +56,7 @@ with open("test_pairs_work.txt", "r", encoding="utf-8") as f:
     file = f.readlines()
 
 base_messages=[
-    {"role": "user", "content": short_prompt}
+    {"role": "user", "content": long_prompt}
 ]
 pred=[]
 correct_labels=[]
@@ -78,6 +78,10 @@ for line in file:
         pr='0'
     else:
         pr='1'
+    if pr!=label:
+        print(s1)
+        print(s2)
+        print(label)
     pred.append(pr)
     correct_labels.append(label)
     
