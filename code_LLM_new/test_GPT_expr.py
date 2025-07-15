@@ -57,7 +57,7 @@ short_prompt = """
     Vertalingen, herziene edities of bewerkingen van hetzelfde werk worden als andere expressies beschouwd.
 """
 
-with open("short_pairs_expr.txt", "r", encoding="utf-8") as f:
+with open("test_pairs_expr.txt", "r", encoding="utf-8") as f:
     file = f.readlines()
 
 base_messages=[
@@ -84,6 +84,10 @@ for line in file:
     else:
         pr='1'
     pred.append(pr)
+    if pr!=label:
+        print(s1)
+        print(s2)
+        print(label)
     correct_labels.append(label)
 
 
