@@ -11,7 +11,7 @@ def clean_segment(segment):
     cleaned = [f"COL {k} VAL {v.strip()}" for k, v in matches if k.strip() not in fields_to_remove_work]
     return ' '.join(cleaned)
 
-with open('test_pairs_expr.txt', 'r', encoding='utf-8') as infile, open('short_pairs_expr.txt', 'w', encoding='utf-8') as outfile:
+with open('test_pairs_work.txt', 'r', encoding='utf-8') as infile, open('short_pairs_work.txt', 'w', encoding='utf-8') as outfile:
     for line in infile:
         parts = line.strip().split('\t')
 

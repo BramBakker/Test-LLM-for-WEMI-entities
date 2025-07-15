@@ -10,7 +10,7 @@ pattern = r'COL (.*?) VAL (.*?)(?= COL |$)'
 preds = []
 labels = []
 total_correct = 0
-with open("neg_work_simple.txt", "r", encoding="utf-8") as f:
+with open("simple_work.txt", "r", encoding="utf-8") as f:
     file = f.readlines()
 def is_match(val1, val2, threshold=1.5):
     return Levenshtein.distance(val1.lower(), val2.lower()) <= threshold
@@ -38,23 +38,23 @@ for line in file:
     for key in shared_keys:
         if is_match(mdict1[key], mdict2[key]):
             if key=='hoofdauteur':
-                if 'vertaling' in s1:
+                if 'vertaling van' in s1:
                     title=mdict2['titel']
                     if title in mdict1['vertaling van']:
-                        match_score+=3                    
-                if 'vertaling' in s2:
+                        match_score+=4                    
+                if 'vertaling van' in s2:
                     title=mdict1['titel']
                     if title in mdict2['vertaling van']:
-                        match_score+=3
+                        match_score+=4
                                     
             if key in imp_labels:
                 if label=='0':
-                    imp_dict[key]+=1
+                    imp_dict[key]+=2
                 if key=='taal':
                     match_score += 2
 
                 match_score += 1
-    if match_score >= 6:
+    if match_score >= 5:
         pred=0
     else:
         pred=1
@@ -71,8 +71,8 @@ precision, recall, f1, _ = precision_recall_fscore_support(
     labels, preds, pos_label=0, average='binary'
 )
 
-print(f"Precision (for '0'): {precision:.4f}")
-print(f"Recall (for '0'): {recall:.4f}")
-print(f"F1-score (for '0'): {f1:.4f}")
+print(f"Precision (for '0'): {precision:.3f}")
+print(f"Recall (for '0'): {recall:.3f}")
+print(f"F1-score (for '0'): {f1:.3f}")
 print(f"Total correct: {total_correct} out of {len(file)} lines")
-print(f"Accuracy: {total_correct / len(file) * 100:.2f}%")
+print(f"Accuracy: {total_correct / len(file) * 100:.3f}%")
