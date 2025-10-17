@@ -5,8 +5,7 @@ from sklearn.metrics import precision_recall_fscore_support
 
 import os
 
-# Set your API key
-hf_token = "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"
+hf_token = ""
 model_id = "meta-llama/Llama-3.3-70B-Instruct"
 
 # Load model & tokenizer
