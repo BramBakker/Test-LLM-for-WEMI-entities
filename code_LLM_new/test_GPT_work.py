@@ -3,8 +3,6 @@ import os
 from sklearn.metrics import precision_recall_fscore_support
 
 
-client = openai.OpenAI(api_key = "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")
-
 long_prompt = """
     Je bent een data assistent. 
     Bepaal of twee boekenrecords tot hetzelfde werk behoren.
