@@ -9,6 +9,7 @@ df = pd.read_csv("test_pairs_expr.txt", sep="\t", header=None, names=["entity_1"
 
 # Initialize the StringEncoder
 encoder = TextEncoder()
+encoder.fit(pd.concat([df["entity_1"], df["entity_2"]]))
 
 # Transform entities into vectors
 vec_1 = encoder.transform(df["entity_1"])
